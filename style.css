@@ -1,8 +1,243 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    background-color: #d3cdcd;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    right: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 6px;
+    right: 2px;
+    -webkit-transition: 
+        background-color .2s linear,
+        width .2s ease-in-out;
+        position: absolute;
+    transition: 
+        background-color .2s linear,
+        width .2s ease-in-out;
+}
+
+.sidebar {
+    position: fixed;
+    width: 270px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    z-index: 1008;
+    transform: translateX(0%);
+
+}
+
+.sidebar .logo {
+    padding: 20px;
+}
+
+.scrollbox {
+    overflow: auto;
+    padding: 24px;
+    visibility: hidden;
+}
+
+.scrollbox-inner,
+.scrollbox:hover {
+    visibility: visible;
+}
+
+.scrollbox-inner {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* ============================== */
+.menu .title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgb(42, 53, 71);
+    margin: 5px 0 8px 8px;
+
+}
+
+.menu ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.menu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(42, 53, 71);
+    text-decoration: none;
+    padding: 8px 16px 8px 8px;
+    min-height: 45px;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.menu ul li>a:hover {
+    color: rgb(93, 135, 255);
+    background: rgba(93, 135, 255, 0.03);
+
+}
+
+.menu ul li.active>a {
+    color: rgb(255, 255, 255);
+    background: rgb(93, 135, 255);
+
+}
+
+/*  */
+.menu ul li a .icon-text .text {
+    margin-left: 8px;
+}
+
+.menu ul li a .badge {
+    color: #fff;
+    background: rgb(73, 190, 255);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: bold;
+    height: 26px;
+    text-align: center;
+}
+
+.menu ul li a .icon-text {
+    flex: 1;
+}
+
+.menu ul li a .arrow {
+    font-size: 14px;
+}
+
+.menu ul li.active a .arrow {
+    transform: rotate(180deg);
+}
+
+.menu .sub-menu {
+    display: none;
+    margin-top: 5px;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/* ================================== */
+.nav-footer{
+    margin: 24px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 7px; 
+    background: #E8F7FF; 
+    color: #000;
+    padding: 12px 16px;
+    position: relative;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    max-height: 72px;
+
+
+}
+.nav-footer .user-avatar{
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.nav-footer .user-avatar img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.nav-footer-text h4{
+    color: rgb(42, 53, 71);
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: -4px;
+    font-weight: 600;
+    line-height: 1.2rem;
+}
+.nav-footer-text span{
+    color: rgb(42, 53, 71);
+    font-size: .75rem;
+    font-weight: 400;
+    line-height: 1rem;
+}
+
+.nav-footer .user-logout-btn button{
+   width: 48px;
+   height: 48px;
+   border: none;
+   border-radius: 4px;
+   color: rgb(93, 135, 255);
+   background: transparent;
+   z-index: 11000;
+
+}
+
+.nav-footer .user-logout-btn button:hover{
+    background: rgba(0, 96, 223, 0.03)
+}
+
+.nav-footer .user-logout-btn button .tooltip-user-btn{
+    position: relative;
+  }
+
+  .nav-footer .user-logout-btn button .tooltip-user-btn .user-tooltip-text {
+    visibility: hidden;
+    width: 70px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -35px;
+    z-index: 1;
+  }
+
+  .nav-footer .user-logout-btn button .tooltip-user-btn:hover .user-tooltip-text {
+    visibility: visible;
+  }
+
+
